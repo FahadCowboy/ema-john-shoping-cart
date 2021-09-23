@@ -1,0 +1,28 @@
+.logo{
+   width: 100;
+   display: flex;
+   justify-content: center;
+}
+
+.logo{
+   width: 12rem;
+   margin: 1rem auto;
+}
+
+.nav{
+   background-color: #000;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.nav-anchors{
+   padding: 10px 20px;
+   text-decoration: none;
+   color: #FFFFFF;
+   transition: all 0.2s ease;
+}
+
+.nav-anchors:hover{
+   background-color: rgba(202, 202, 160, 0.61);
+}

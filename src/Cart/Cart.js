@@ -1,18 +1,21 @@
 import React from 'react';
 import './Cart.css'
 
-const Cart = cart => {
+const Cart = props => {
+   const {cart} = props
+   const initialTotal = cart.reduce((accu, cart) => accu + cart.price,0).toFixed(2)
+   console.log(cart)
    return (
       <div>
          <div className="cart-header">
             <h2>Order Summary</h2>
-            <p style={{fontSize: "1.2rem"}}>Items Ordered: {cart.length}</p>
+            <p style={{fontSize: "1.2rem"}}>Items Ordered: {props.cart.length}</p>
          </div>
          <div className="cart-body">
             <div>
                <div className="table-row">
-                  <p colSpan="2">items:</p>
-                  <p>$0</p>
+                  <p colSpan="2">Only price:</p>
+                  <p>${initialTotal}</p>
                </div>
             
                <div className="table-row">

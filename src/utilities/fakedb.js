@@ -1,6 +1,19 @@
+const getDB = () => window.localStorage.getItem('shopingCart')
+
+const getStoredCart = () => {
+   const doesExist = getDB()
+   return doesExist ? JSON.parse(doesExist) : {}
+}
+
+const removeStoredCart = () => {
+   window.localStorage.removeItem('shopingCart')
+}
+
+
+
 const addToDb = id => {
    let shopingCart = {}
-   const doesExist = window.localStorage.getItem('shopingCart')
+   const doesExist = getDB()
    
    if(doesExist){
       
@@ -8,7 +21,7 @@ const addToDb = id => {
       if(shopingCart[id]){
          const newCount = shopingCart[id] + 1
          shopingCart[id] = newCount
-         console.log(shopingCart)
+         // console.log(shopingCart)
       } else{
          shopingCart[id] = 1
       }
@@ -19,4 +32,9 @@ const addToDb = id => {
 
    window.localStorage.setItem('shopingCart', JSON.stringify(shopingCart))
 }
-export {addToDb}
+
+
+
+
+
+export {addToDb, getStoredCart, removeStoredCart}

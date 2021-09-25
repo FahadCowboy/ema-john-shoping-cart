@@ -5,10 +5,8 @@ const Cart = props => {
    const {cart} = props
    const initialTotal = cart.reduce((accu, cart) => accu + cart.price,0)
    const shiping = 50
-   const tax = initialTotal / 100 * 10
-   console.log(typeof initialTotal, typeof shiping, typeof tax)
+   const tax = (initialTotal + shiping) * 0.10
    const total = initialTotal+shiping+tax
-   console.log(total)
    return (
       <div>
          <div className="cart-header">
